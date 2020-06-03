@@ -1,0 +1,1 @@
+export const EXAMPLE_MODE_TRUE = true

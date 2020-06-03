@@ -1,0 +1,65 @@
+{
+  "name": "imagestudio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server/index.js",
+  "scripts": {
+    "build": "webpack --mode=production && npm run copy_static_assets",
+    "dev": "webpack && npm run copy_static_assets && concurrently \"webpack --watch\" \"nodemon --watch dist/server",
+    "watch_not": "webpack && npm run copy_static_assets && concurrently \"webpack --watch\" \"nodemon dist --ignore json\"",
+    "test": "webpack --config webpack.test.js && concurrently \"webpack --config webpack.test.js --watch\" \"mocha --watch\"",
+    "start": "NODE_ENV=production node copyStaticAssets.js && node dist/server/index.js",
+    "copy_static_assets": "node copyStaticAssets.js"
+  },
+  "engines": {
+    "node": "9.2.0"
+  },
+  "dependencies": {
+    "compression": "1.7.4",
+    "dateformat": "3.0.3",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "jquery": "3.5.1",
+    "morgan": "1.10.0",
+    "parse-dashboard": "2.1.0",
+    "parse-server": "4.2.0",
+    "parse-server-dedicated-email-adapter": "1.0.0",
+    "path": "0.12.7",
+    "pretty-print-json": "^0.2.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router-dom": "5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.6",
+    "babel-loader": "8.1.0",
+    "@babel/preset-env": "7.9.6",
+    "@babel/preset-react": "7.9.4",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "concurrently": "5.2.0",
+    "css-loader": "3.5.3",
+    "file-loader": "6.0.0",
+    "fs-extra": "9.0.0",
+    "nodemon": "2.0.4",
+    "node-sass": "4.14.1",
+    "parse": "2.13.0",
+    "sass": "1.26.5",
+    "sass-loader": "8.0.2",
+    "style-loader": "1.2.1",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11",
+    "webpack-node-externals": "1.7.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "extensionDependencies": []
+}
