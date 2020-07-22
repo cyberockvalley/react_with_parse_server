@@ -22,7 +22,7 @@
     "jquery": "3.5.1",
     "morgan": "1.10.0",
     "parse-dashboard": "2.1.0",
-    "parse-server": "4.2.0",
+    "parse-server": "4.3.0",
     "parse-server-dedicated-email-adapter": "1.0.0",
     "path": "0.12.7",
     "pretty-print-json": "^0.2.1",
